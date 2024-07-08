@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { selectRandomColor } from "../utils/helpers";
-import { colors } from "../utils/configs";
+import { selectRandomColor } from "@/utils/helpers";
+import { colors } from "@/utils/configs";
 
-export const MultiSelectDropdown = () => {
+const MultiSelectDropdown = () => {
   const [term, setTerm] = useState("");
   const [selectedData, set_selectedData] = useState([]);
   const [suggestion, set_suggestion] = useState([]);
@@ -96,3 +96,5 @@ export const MultiSelectDropdown = () => {
     </>
   );
 };
+
+export default MultiSelectDropdown;

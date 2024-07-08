@@ -1,16 +1,29 @@
-import { MultiSelectDropdown } from "./components/MultiSelectDropdown";
-import UserCrud from "./components/UserCrud";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Home from "./pages/home";
+import { appRoutes } from "./routes/appRoutes";
 
 function App() {
   return (
-    <div className="">
-      <h1 className="flex justify-center items-center w-full text-lg font-medium my-4">
-        Machine Round Projects
-      </h1>
-      <div className="mx-8">
-        <UserCrud />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home>
+              <Outlet />
+            </Home>
+          }
+        >
+          {appRoutes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.component />}
+            />
+          ))}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
