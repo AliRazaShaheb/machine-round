@@ -33,7 +33,7 @@ const Home = ({ children }) => {
           </div>
         </Drawer>
       </div>
-      <div className="right">
+      <div className="right w-full pr-10">
         {/* header */}
         <div className="top">
           <h1 className="flex justify-center items-center w-full text-lg font-medium my-4">
@@ -41,7 +41,7 @@ const Home = ({ children }) => {
           </h1>
         </div>
         {/* content */}
-        <div className="bottom flex-1"></div>
+        <div className="bottom flex-1">{children}</div>
         {/* footer */}
         <div className="footer"></div>
       </div>
